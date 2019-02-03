@@ -32,7 +32,7 @@ You can find the most recent version of this project [here](https://github.com/c
 ### Composer
 
 Execute the following command to get the latest version of the package:
-```
+```shell
 composer require cse/helpers-json
 ```
 
@@ -48,13 +48,26 @@ Or file composer.json should include the following contents:
 ### Git
 
 Clone this repository locally:
-```
+```shell
 git clone https://github.com/cs-eliseev/helpers-date.git
 ```
 
 ### Download
 
 [Download the latest release here](https://github.com/cs-eliseev/helpers-date/archive/master.zip).
+
+## Usage
+
+The class consists of static methods that are conveniently used in any project. See example [examples-date.php](https://github.com/cs-eliseev/helpers-date/blob/master/examples/examples-date.php).
+
+**GET time by date**
+
+Example:
+```php
+var_dump(Date::getTimeByDate('01.01.2018'));
+// 1514754000
+```
+
 
 
 ## License
