@@ -11,13 +11,15 @@ namespace cse\helpers;
  */
 class Date
 {
+    const FORMAT_DEFAULT = 'd.m.Y';
+
     /**
      * Get time by date
      *
      * @param $date
      * @return int|null
      */
-    public static function getTimeByDate($date): ?int
+    public static function getTime($date): ?int
     {
         if (is_string($date)) {
             $date = strtotime($date);
@@ -28,5 +30,19 @@ class Date
         if ($date < 0) return null;
 
         return (int) $date;
+    }
+
+    /**
+     * Convert date to format
+     *
+     * @param $date
+     * @param string $format
+     * @return null|string
+     */
+    public static function toFormat($date, string $format = self::FORMAT_DEFAULT): ?string
+    {
+        $date = self::getTime($date);
+
+        return empty($date) ? null : date($format, $date);
     }
 }
