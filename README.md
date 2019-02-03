@@ -64,10 +64,23 @@ The class consists of static methods that are conveniently used in any project. 
 
 Example:
 ```php
-var_dump(Date::getTimeByDate('01.01.2018'));
+Date::getTime('01.01.2018');
 // 1514754000
 ```
 
+** Convert date to format**
+
+Example:
+```php
+Date::toFormat('2018-01-01');
+// 01.01.2018
+```
+
+Change default format:
+```php
+Date::toFormat('01.01.2018', 'Y/m/d');
+// 2018/01/01
+```
 
 
 ## License
