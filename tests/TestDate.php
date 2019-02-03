@@ -9,17 +9,17 @@ class TestDate extends TestCase
      * @param $date
      * @param $expected
      *
-     * @dataProvider providerGetTimeByDate
+     * @dataProvider providerGetTime
      */
-    public function testGetTimeByDate($date, $expected): void
+    public function testGetTime($date, $expected): void
     {
-        $this->assertEquals($expected, Date::getTimeByDate($date));
+        $this->assertEquals($expected, Date::getTime($date));
     }
 
     /**
      * @return array
      */
-    public function providerGetTimeByDate(): array
+    public function providerGetTime(): array
     {
         return [
             [
@@ -33,6 +33,49 @@ class TestDate extends TestCase
             [
                 true,
                 null,
+            ],
+        ];
+    }
+
+    /**
+     * @param null|string $date
+     * @param string $format
+     * @param $expected
+     *
+     * @dataProvider providerConvertDateToFormat
+     */
+    public function testToFormat($date, string $format, $expected): void
+    {
+        $this->assertEquals($expected, Date::toFormat($date, $format));
+    }
+
+    /**
+     * @return array
+     */
+    public function providerToFormat(): array
+    {
+        $now = (new \DateTime('now'));
+
+        return [
+            [
+                null,
+                Date::FORMAT_DEFAULT,
+                null,
+            ],
+            [
+                $now->format(Date::FORMAT_DEFAULT),
+                Date::FORMAT_DEFAULT,
+                $now->format(Date::FORMAT_DEFAULT),
+            ],
+            [
+                $now->format(Date::FORMAT_SQL),
+                Date::FORMAT_DEFAULT,
+                $now->format(Date::FORMAT_DEFAULT),
+            ],
+            [
+                strtotime($now->format(Date::FORMAT_DEFAULT . ' H:i:s')),
+                Date::FORMAT_DEFAULT . ' H:i:s',
+                $now->format(Date::FORMAT_DEFAULT . ' H:i:s'),
             ],
         ];
     }
