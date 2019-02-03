@@ -4,7 +4,10 @@ require_once __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'autol
 
 use cse\helpers\Date;
 
-// Example: get time by date
+// Example: get time
 // 01.01.2018 => 1514754000
-var_dump(Date::getTimeByDate('01.01.2018'));
+var_dump(Date::getTime('01.01.2018'));
 
+// Example: to Format
+// 2018-01-01 => 01.01.2018
+var_dump(Date::toFormat('2018-01-01'));
