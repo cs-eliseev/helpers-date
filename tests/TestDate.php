@@ -79,4 +79,46 @@ class TestDate extends TestCase
             ],
         ];
     }
+
+    /**
+     * @param null|string $date
+     * @param $expected
+     *
+     * @dataProvider providerConvertDateToSql
+     */
+    public function testConvertDateToSql($date, $expected): void
+    {
+        $this->assertEquals($expected, Date::toSQL($date));
+    }
+
+    /**
+     * @return array
+     */
+    public function providerConvertDateToSql(): array
+    {
+        $now = (new \DateTime('now'));
+
+        return [
+            [
+                null,
+                null,
+            ],
+            [
+                '01.2018',
+                null,
+            ],
+            [
+                $now->format(Date::FORMAT_DEFAULT),
+                $now->format(Date::FORMAT_SQL),
+            ],
+            [
+                $now->format(Date::FORMAT_SQL),
+                $now->format(Date::FORMAT_SQL),
+            ],
+            [
+                strtotime($now->format(Date::FORMAT_DEFAULT . ' H:i:s')),
+                $now->format(Date::FORMAT_SQL . ' H:i:s'),
+            ],
+        ];
+    }
 }
