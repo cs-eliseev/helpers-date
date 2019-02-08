@@ -82,6 +82,14 @@ Date::toFormat('01.01.2018', 'Y/m/d');
 // 2018/01/01
 ```
 
+** Convert date to SQL**
+
+Example:
+```php
+Date::toSQL('01.01.2018');
+// 2018-01-01
+```
+
 
 ## License
 
