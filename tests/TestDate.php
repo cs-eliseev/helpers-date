@@ -167,4 +167,9 @@ class TestDate extends TestCase
             ],
         ];
     }
+
+    public function testCurrent(): void
+    {
+        $this->assertEquals(date(Date::FORMAT_DEFAULT), Date::current());
+    }
 }
