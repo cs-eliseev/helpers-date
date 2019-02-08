@@ -84,9 +84,9 @@ class TestDate extends TestCase
      * @param null|string $date
      * @param $expected
      *
-     * @dataProvider providerConvertDateToSql
+     * @dataProvider providerToSql
      */
-    public function testConvertDateToSql($date, $expected): void
+    public function testToSql($date, $expected): void
     {
         $this->assertEquals($expected, Date::toSQL($date));
     }
@@ -94,7 +94,7 @@ class TestDate extends TestCase
     /**
      * @return array
      */
-    public function providerConvertDateToSql(): array
+    public function providerToSql(): array
     {
         $now = (new \DateTime('now'));
 
