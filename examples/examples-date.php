@@ -32,3 +32,9 @@ var_dump(Date::diff(strtotime('2018-09-02'), strtotime('2018-07-01'), '%m'));
 // 0
 var_dump(Date::diff('31.01.2018', strtotime('2018-01-02'), '%d/%m'));
 echo PHP_EOL;
+
+// Example: current
+var_dump(Date::current());
+// Example: set format
+var_dump(Date::current(Date::FORMAT_SQL));
+echo PHP_EOL;
