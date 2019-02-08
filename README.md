@@ -68,7 +68,7 @@ Date::getTime('01.01.2018');
 // 1514754000
 ```
 
-** Convert date to format**
+**Convert date to format**
 
 Example:
 ```php
@@ -82,7 +82,7 @@ Date::toFormat('01.01.2018', 'Y/m/d');
 // 2018/01/01
 ```
 
-** Convert date to SQL**
+**Convert date to SQL**
 
 Example:
 ```php
@@ -90,6 +90,31 @@ Date::toSQL('01.01.2018');
 // 2018-01-01
 ```
 
+**Diff date**
+
+Example:
+```php
+Date::diff('2018-07-01', '2018-07-01');
+// 0
+```
+
+Date format hour:
+```php
+Date::diff('2018-07-01 02:00:00', '01.01.2018 00:00:00', 'h');
+// 2
+```
+
+Date time:
+```php
+Date::diff(strtotime('2018-09-02'), strtotime('2018-07-02'), 'm'));
+// 2
+```
+
+Other format:
+```php
+Date::diff('31.01.2018', strtotime('2018-01-02'), 'm'));
+// 0
+```
 
 ## License
 
