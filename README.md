@@ -116,6 +116,18 @@ Date::diff('31.01.2018', strtotime('2018-01-02'), '%d/%m'));
 // 29/0
 ```
 
+**Current date**
+
+Example:
+```php
+Date::current();
+```
+
+Set format:
+```php
+Date::current(Date::FORMAT_SQL);
+```
+
 ## License
 
 See the [LICENSE.md](https://github.com/cs-eliseev/helpers-date/blob/master/LICENSE.md) file for licensing details.
