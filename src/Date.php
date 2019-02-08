@@ -11,6 +11,7 @@ namespace cse\helpers;
  */
 class Date
 {
+    const FORMAT_SQL = 'Y-m-d';
     const FORMAT_DEFAULT = 'd.m.Y';
 
     /**
@@ -44,5 +45,18 @@ class Date
         $date = self::getTime($date);
 
         return empty($date) ? null : date($format, $date);
+    }
+
+    /**
+     * Convert date to SQL
+     *
+     * @param $date
+     * @return null|string
+     */
+    public static function toSQL($date): ?string
+    {
+        $date = self::getTime($date);
+
+        return  empty($date) ? null : date(self::FORMAT_SQL, $date);
     }
 }
