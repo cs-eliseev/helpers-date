@@ -21,3 +21,14 @@ echo PHP_EOL;
 // 01.01.2018 => 2018-01-01
 var_dump(Date::toSQL('01.01.2018'));
 echo PHP_EOL;
+
+// Example: diff
+// 0
+var_dump(Date::diff('2018-07-01', '2018-07-01'));
+// 2
+var_dump(Date::diff('2018-07-01 02:00:00', '01.01.2018 00:00:00', 'h'));
+// 2
+var_dump(Date::diff(strtotime('2018-09-02'), strtotime('2018-07-02'), 'm'));
+// 0
+var_dump(Date::diff('31.01.2018', strtotime('2018-01-02'), 'm'));
+echo PHP_EOL;
