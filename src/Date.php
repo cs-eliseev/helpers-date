@@ -59,4 +59,31 @@ class Date
 
         return  empty($date) ? null : date(self::FORMAT_SQL, $date);
     }
+
+    /**
+     * Diff dates
+     *
+     * @param $firstDate
+     * @param $secondDate
+     * @param string $type
+     * @return null
+     */
+    public static function diff($firstDate, $secondDate, string $type = 'd')
+    {
+        $firstDate = self::getTime($firstDate);
+        $secondDate = self::getTime($secondDate);
+
+        if (empty($secondDate) || empty($firstDate)) return null;
+
+        if ($firstDate > $secondDate) {
+            $startDate = new \DateTime(date('Y-m-d H:i:s', $firstDate));
+            $endDate = new \DateTime(date('Y-m-d H:i:s', $secondDate));
+        } else {
+            $startDate = new \DateTime(date('Y-m-d H:i:s', $secondDate));
+            $endDate = new \DateTime(date('Y-m-d H:i:s', $firstDate));
+        }
+
+
+        return $endDate->diff($startDate)->{$type};
+    }
 }
