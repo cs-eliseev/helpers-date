@@ -121,4 +121,50 @@ class TestDate extends TestCase
             ],
         ];
     }
+
+    /**
+     * @param $start
+     * @param $end
+     * @param string $type
+     * @param $expected
+     *
+     * @dataProvider providerDiffDates
+     */
+    public function testDiffDates($start, $end, string $type, $expected): void
+    {
+        $this->assertEquals($expected, Date::diff($start, $end, $type));
+    }
+
+    /**
+     * @return array
+     */
+    public function providerDiffDates(): array
+    {
+        return [
+            [
+                '2018-07-01',
+                '2018-07-01',
+                'd',
+                0,
+            ],
+            [
+                '2018-07-01',
+                strtotime('2018-07-02'),
+                'd',
+                1,
+            ],
+            [
+                strtotime('2018-09-02'),
+                strtotime('2018-07-02'),
+                'm',
+                2,
+            ],
+            [
+                '2018-07-01 02:00:00',
+                '2018-07-01 00:00:00',
+                'h',
+                2,
+            ],
+        ];
+    }
 }
