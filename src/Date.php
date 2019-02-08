@@ -66,9 +66,9 @@ class Date
      * @param $firstDate
      * @param $secondDate
      * @param string $type
-     * @return null
+     * @return null|string
      */
-    public static function diff($firstDate, $secondDate, string $type = 'd')
+    public static function diff($firstDate, $secondDate, string $type = '%d'): ?string
     {
         $firstDate = self::getTime($firstDate);
         $secondDate = self::getTime($secondDate);
@@ -84,6 +84,6 @@ class Date
         }
 
 
-        return $endDate->diff($startDate)->{$type};
+        return $endDate->diff($startDate)->format($type);
     }
 }
