@@ -86,4 +86,15 @@ class Date
 
         return $endDate->diff($startDate)->format($type);
     }
+
+    /**
+     * Get current date
+     *
+     * @param string $format
+     * @return string
+     */
+    public static function current(string $format = self::FORMAT_DEFAULT): string
+    {
+        return date($format);
+    }
 }
