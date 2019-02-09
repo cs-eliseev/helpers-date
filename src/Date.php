@@ -113,4 +113,17 @@ class Date
 
         return empty($date) ? null : date($format, strtotime(date('Y-m-01 00:00:00', $date)) - 1);
     }
+
+    /**
+     * Get quarter by date
+     *
+     * @param $date
+     * @return null|int
+     */
+    public static function getQuarter($date): ?int
+    {
+        $date = self::getTime($date);
+
+        return empty($date) ? null : (int) ceil(date('n', $date) / 3);
+    }
 }
