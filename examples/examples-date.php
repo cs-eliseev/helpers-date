@@ -44,3 +44,8 @@ var_dump(Date::extremeMouthDate());
 // Example: first date mouth
 var_dump(Date::extremeMouthDate('now', 'Y-m-01'));
 echo PHP_EOL;
+
+// Example: get quarter
+// 31.12.2018 23:59:59 => 4
+var_dump(Date::getQuarter('31.12.2018 23:59:59'));
+echo PHP_EOL;
