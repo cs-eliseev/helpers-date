@@ -56,14 +56,14 @@ var_dump(Date::current());
 var_dump(Date::current(Date::FORMAT_SQL));
 echo PHP_EOL;
 
-// Example: extreme mouth date
-var_dump(Date::extremeMouthDate('11.01.2018'));
-// Example: first date mouth
-var_dump(Date::extremeMouthDate(strtotime('28.02.2018'), 'Y-m-01'));
+// Example: extreme month date
+var_dump(Date::extremeMonthDate('11.01.2018'));
+// Example: first date month
+var_dump(Date::extremeMonthDate(strtotime('28.02.2018'), 'Y-m-01'));
 // Example: current date
-var_dump(Date::extremeMouthDate());
+var_dump(Date::extremeMonthDate());
 // Example: relative time
-var_dump(Date::extremeMouthDate('+1 week'));
+var_dump(Date::extremeMonthDate('+1 week'));
 echo PHP_EOL;
 
 // Example: get quarter
@@ -73,4 +73,9 @@ var_dump(Date::getQuarter('31.12.2018 23:59:59'));
 var_dump(Date::getQuarter());
 // Example: relative time
 var_dump(Date::getQuarter('+1 week'));
+echo PHP_EOL;
+
+// Example: get quarter by number month
+// 12 => 4
+Date::getQuarterByNumberMonth(12);
 echo PHP_EOL;
