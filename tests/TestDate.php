@@ -178,17 +178,17 @@ class TestDate extends TestCase
      * @param string $format
      * @param $expected
      *
-     * @dataProvider providerExtremeMouthDate
+     * @dataProvider providerExtremeMonthDate
      */
-    public function testExtremeMouthDate($date, string $format, $expected): void
+    public function testExtremeMonthDate($date, string $format, $expected): void
     {
-        $this->assertEquals($expected, Date::extremeMouthDate($date, $format));
+        $this->assertEquals($expected, Date::extremeMonthDate($date, $format));
     }
 
     /**
      * @return array
      */
-    public function providerExtremeMouthDate(): array
+    public function providerExtremeMonthDate(): array
     {
         return [
             [
@@ -236,6 +236,38 @@ class TestDate extends TestCase
             ],
             [
                 '31.12.2018',
+                4,
+            ],
+        ];
+    }
+
+    /**
+     * @param $numberMonth
+     * @param $expected
+     *
+     * @dataProvider providerGetQuarterByMonth
+     */
+    public function testGetQuarterByMonth($numberMonth, $expected): void
+    {
+        $this->assertEquals($expected, Date::getQuarterByNumberMonth($numberMonth));
+    }
+
+    /**
+     * @return array
+     */
+    public function providerGetQuarterByMonth(): array
+    {
+        return [
+            [
+                1,
+                1,
+            ],
+            [
+                3,
+                1,
+            ],
+            [
+                12,
                 4,
             ],
         ];
