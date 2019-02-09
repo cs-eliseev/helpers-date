@@ -1,7 +1,7 @@
 DATE CSE HELPERS
 =======
 
-The helpers allows you to JSON processing. Encode, decode, check error, throw exception - all this is available in this library.
+The helpers allows you to DATE processing. Change format, add/sub day, diff date, get quarter - all this is available in this library.
 
 Project repository: https://github.com/cs-eliseev/helpers-date
 
@@ -11,7 +11,7 @@ Project repository: https://github.com/cs-eliseev/helpers-date
 
 CSE HELPERS is a collection of several libraries with simple functions written in PHP for people.
 
-Despite using PHP as the main programming language for the Internet, its functions are not enough. Date CSE HELPERS used method: encode, decode, check error, throw exception.
+Despite using PHP as the main programming language for the Internet, its functions are not enough. Date CSE HELPERS used method: change format, add/sub day, diff date, get quarter and other.
 
 CSE HELPERS was created for the rapid development of web applications.
 
@@ -70,8 +70,8 @@ Date::getTime('01.01.2018');
 
 Use curent date:
 ```php
-Date::getTime();now
-// Date::getTime('')
+Date::getTime();
+// Date::getTime('now')
 ```
 
 Use relative time:
