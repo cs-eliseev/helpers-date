@@ -20,7 +20,7 @@ class Date
      * @param $date
      * @return int|null
      */
-    public static function getTime($date): ?int
+    public static function getTime($date = 'now'): ?int
     {
         if (is_string($date)) {
             $date = strtotime($date);
@@ -40,7 +40,7 @@ class Date
      * @param string $format
      * @return null|string
      */
-    public static function toFormat($date, string $format = self::FORMAT_DEFAULT): ?string
+    public static function toFormat($date = 'now', string $format = self::FORMAT_DEFAULT): ?string
     {
         $date = self::getTime($date);
 
@@ -53,7 +53,7 @@ class Date
      * @param $date
      * @return null|string
      */
-    public static function toSQL($date): ?string
+    public static function toSQL($date = 'now'): ?string
     {
         $date = self::getTime($date);
 
@@ -68,7 +68,7 @@ class Date
      * @param string $type
      * @return null|string
      */
-    public static function diff($firstDate, $secondDate, string $type = '%d'): ?string
+    public static function diff($firstDate, $secondDate = 'now', string $type = '%d'): ?string
     {
         $firstDate = self::getTime($firstDate);
         $secondDate = self::getTime($secondDate);
@@ -120,7 +120,7 @@ class Date
      * @param $date
      * @return null|int
      */
-    public static function getQuarter($date): ?int
+    public static function getQuarter($date = 'now'): ?int
     {
         $date = self::getTime($date);
 
