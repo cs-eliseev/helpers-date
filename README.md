@@ -242,6 +242,26 @@ Date::getQuarterByNumberMonth(12);
 // 4
 ```
 
+**Change day**
+
+Add day:
+```php
+Date::changeDay('01.01.2018', 1);
+// 02.01.2018
+```
+
+Sub day:
+```php
+Date::changeDay('2018-01-01', -1);
+// 31.12.2017
+```
+
+Add day:
+```php
+Date::changeDay('01.01.2018', -1, Date::FORMAT_SQL);
+// 2017-12-31
+```
+
 
 ## License
 
