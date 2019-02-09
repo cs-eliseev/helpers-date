@@ -184,29 +184,29 @@ Set format:
 Date::current(Date::FORMAT_SQL);
 ```
 
-**Extrme mouth date**
+**Extrme month date**
 
-Get last day mouth:
+Get last day month:
 ```php
-Date::extremeMouthDate('11.01.2018');
+Date::extremeMonthDate('11.01.2018');
 // 2018-01-31
 ```
 
-Use timestemp get first day mouth:
+Use timestemp get first day month:
 ```php
-Date::extremeMouthDate(strtotime('28.02.2018'), 'Y-m-01');
+Date::extremeMonthDate(strtotime('28.02.2018'), 'Y-m-01');
 // 2018-02-01
 ```
 
 Use current date:
 ```php
-Date::extremeMouthDate();
-// Date::extremeMouthDate('now') => Y-m-last day
+Date::extremeMonthDate();
+// Date::extremeMonthDate('now') => Y-m-last day
 ```
 
 Use relative date:
 ```php
-Date::extremeMouthDate('+1 week');
+Date::extremeMonthDate('+1 week');
 ```
 
 **Get quarter**
@@ -232,6 +232,14 @@ Date::getQuarter();
 Use relative time:
 ```php
 Date::getQuarter('+1 week 2 days 4 hours 2 seconds');
+```
+
+**Get quarter by number month**
+
+Example:
+```php
+Date::getQuarterByNumberMonth(12);
+// 4
 ```
 
 
