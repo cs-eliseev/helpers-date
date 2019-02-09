@@ -77,5 +77,16 @@ echo PHP_EOL;
 
 // Example: get quarter by number month
 // 12 => 4
-Date::getQuarterByNumberMonth(12);
+var_dump(Date::getQuarterByNumberMonth(12));
+echo PHP_EOL;
+
+// Example: change day
+// 01.01.2018 => 02.01.2018
+var_dump(Date::changeDay('01.01.2018', 1));
+// Example: sub day
+// 2018-01-01 => 31.12.2018
+var_dump(Date::changeDay('2018-01-01', -1));
+// Example: change format
+// 01.01.2018 => 2017-12-31
+var_dump(Date::changeDay('01.01.2018', -1, Date::FORMAT_SQL));
 echo PHP_EOL;
