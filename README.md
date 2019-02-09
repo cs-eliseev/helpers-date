@@ -68,6 +68,17 @@ Date::getTime('01.01.2018');
 // 1514754000
 ```
 
+Use curent date:
+```php
+Date::getTime();now
+// Date::getTime('')
+```
+
+Use relative time:
+```php
+Date::getTime('+1 week 2 days 4 hours 2 seconds');
+```
+
 **Convert date to format**
 
 Example:
@@ -76,10 +87,27 @@ Date::toFormat('2018-01-01');
 // 01.01.2018
 ```
 
+Use timestamp:
+```php
+Date::toFormat(1514754000);
+// 01.01.2018
+```
+
 Change default format:
 ```php
-Date::toFormat('01.01.2018', 'Y/m/d');
+Date::toFormat(1514754000, 'Y/m/d');
 // 2018/01/01
+```
+
+Use curent date:
+```php
+Date::toFormat();
+// Date::toFormat('now')
+```
+
+Use relative time:
+```php
+Date::toFormat('+1 week 2 days 4 hours 2 seconds');
 ```
 
 **Convert date to SQL**
@@ -88,6 +116,23 @@ Example:
 ```php
 Date::toSQL('01.01.2018');
 // 2018-01-01
+```
+
+Use timestamp:
+```php
+Date::toSQL(1514754000);
+// 01.01.2018
+```
+
+Use curent date:
+```php
+Date::toSQL();
+// Date::toSQL('now')
+```
+
+Use relative time:
+```php
+Date::toSQL('+1 week 2 days 4 hours 2 seconds');
 ```
 
 **Diff date**
@@ -104,7 +149,7 @@ Date::diff('2018-07-01 02:00:00', '01.01.2018 00:00:00', '%h');
 // 2
 ```
 
-Date time:
+Use timestamp:
 ```php
 Date::diff(strtotime('2018-09-02'), strtotime('2018-07-02'), '%m'));
 // 2
@@ -112,8 +157,19 @@ Date::diff(strtotime('2018-09-02'), strtotime('2018-07-02'), '%m'));
 
 Other format:
 ```php
-Date::diff('31.01.2018', strtotime('2018-01-02'), '%d/%m'));
-// 29/0
+Date::diff('31.01.2018', 1514754000, '%d/%m'));
+// 30/0
+```
+
+Curent date:
+```php
+Date::diff('31.01.2018');
+// Date::diff('31.01.2018', 'now')
+```
+
+Use relative time:
+```php
+Date::diff'31.01.2018', '+1 week');
 ```
 
 **Current date**
@@ -130,30 +186,52 @@ Date::current(Date::FORMAT_SQL);
 
 **Extrme mouth date**
 
-Example:
+Get last day mouth:
 ```php
 Date::extremeMouthDate('11.01.2018');
 // 2018-01-31
 ```
 
-First day:
+Use timestemp get first day mouth:
 ```php
 Date::extremeMouthDate(strtotime('28.02.2018'), 'Y-m-01');
 // 2018-02-01
 ```
 
-Default:
+Use current date:
 ```php
 Date::extremeMouthDate();
 // Date::extremeMouthDate('now') => Y-m-last day
 ```
 
-**Extrme mouth date**
+Use relative date:
+```php
+Date::extremeMouthDate('+1 week');
+```
+
+**Get quarter**
 
 Example:
 ```php
 Date::getQuarter('31.12.2018 23:59:59');
 // 4
+```
+
+Use timestemp:
+```php
+Date::getQuarter(1514754000);
+// 1
+```
+
+Use curent date:
+```php
+Date::getQuarter();
+// Date::getQuarter('now')
+```
+
+Use relative time:
+```php
+Date::getQuarter('+1 week 2 days 4 hours 2 seconds');
 ```
 
 
