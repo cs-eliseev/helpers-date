@@ -107,7 +107,7 @@ class Date
      * @param string $format
      * @return null|string
      */
-    public static function extremeMouthDate($date = 'now', string $format = self::FORMAT_SQL): ?string
+    public static function extremeMonthDate($date = 'now', string $format = self::FORMAT_SQL): ?string
     {
         $date = self::getTime($date);
 
@@ -125,5 +125,16 @@ class Date
         $date = self::getTime($date);
 
         return empty($date) ? null : (int) ceil(date('n', $date) / 3);
+    }
+
+    /**
+     * Get quarter by month
+     *
+     * @param $numberMonth
+     * @return int
+     */
+    public static function getQuarterByNumberMonth($numberMonth): int
+    {
+        return (int) ceil((int) $numberMonth / 3);
     }
 }
