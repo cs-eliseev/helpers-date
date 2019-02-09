@@ -97,4 +97,20 @@ class Date
     {
         return date($format);
     }
+
+    /**
+     * Get date last month by date
+     * format = 'Y-m-01' - fist day
+     * format = 'Y-m-d' - last day
+     *
+     * @param $date
+     * @param string $format
+     * @return null|string
+     */
+    public static function extremeMouthDate($date = 'now', string $format = self::FORMAT_SQL): ?string
+    {
+        $date = self::getTime($date);
+
+        return empty($date) ? null : date($format, strtotime(date('Y-m-01 00:00:00', $date)) - 1);
+    }
 }
