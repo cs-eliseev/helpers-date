@@ -128,6 +128,27 @@ Set format:
 Date::current(Date::FORMAT_SQL);
 ```
 
+**Extrme mouth date**
+
+Example:
+```php
+Date::extremeMouthDate('11.01.2018');
+// 2018-01-31
+```
+
+First day:
+```php
+Date::extremeMouthDate(strtotime('28.02.2018'), 'Y-m-01');
+// 2018-02-01
+```
+
+Default:
+```php
+Date::extremeMouthDate();
+// Date::extremeMouthDate('now') => Y-m-last day
+```
+
+
 ## License
 
 See the [LICENSE.md](https://github.com/cs-eliseev/helpers-date/blob/master/LICENSE.md) file for licensing details.
