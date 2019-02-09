@@ -148,6 +148,14 @@ Date::extremeMouthDate();
 // Date::extremeMouthDate('now') => Y-m-last day
 ```
 
+**Extrme mouth date**
+
+Example:
+```php
+Date::getQuarter('31.12.2018 23:59:59');
+// 4
+```
+
 
 ## License
 
