@@ -208,4 +208,36 @@ class TestDate extends TestCase
             ],
         ];
     }
+
+    /**
+     * @param $date
+     * @param $expected
+     *
+     * @dataProvider providerGetQuarter
+     */
+    public function testGetQuarter($date, $expected): void
+    {
+        $this->assertEquals($expected, Date::getQuarter($date));
+    }
+
+    /**
+     * @return array
+     */
+    public function providerGetQuarter(): array
+    {
+        return [
+            [
+                '01.01.2018 00:00:00',
+                1,
+            ],
+            [
+                '2018-03-31',
+                1,
+            ],
+            [
+                '31.12.2018',
+                4,
+            ],
+        ];
+    }
 }
