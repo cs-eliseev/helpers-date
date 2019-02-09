@@ -272,4 +272,44 @@ class TestDate extends TestCase
             ],
         ];
     }
+
+    /**
+     * @param $date
+     * @param int $day
+     * @param string $format
+     * @param $expected
+     *
+     * @dataProvider providerChangeDays
+     */
+    public function testChangeDays($date, int $day, string $format, $expected): void
+    {
+        $this->assertEquals($expected, Date::changeDay($date, $day, $format));
+    }
+
+    /**
+     * @return array
+     */
+    public function providerChangeDays(): array
+    {
+        return [
+            [
+                '01.01.2018 00:00:00',
+                -1,
+                Date::FORMAT_SQL,
+                '2017-12-31'
+            ],
+            [
+                '2018-12-31',
+                1,
+                Date::FORMAT_DEFAULT,
+                '01.01.2019'
+            ],
+            [
+                '11.03.2018',
+                -11,
+                Date::FORMAT_DEFAULT,
+                '28.02.2018'
+            ],
+        ];
+    }
 }
