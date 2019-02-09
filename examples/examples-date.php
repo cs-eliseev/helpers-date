@@ -38,3 +38,9 @@ var_dump(Date::current());
 // Example: set format
 var_dump(Date::current(Date::FORMAT_SQL));
 echo PHP_EOL;
+
+// Example: extreme mouth date
+var_dump(Date::extremeMouthDate());
+// Example: first date mouth
+var_dump(Date::extremeMouthDate('now', 'Y-m-01'));
+echo PHP_EOL;
