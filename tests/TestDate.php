@@ -172,4 +172,40 @@ class TestDate extends TestCase
     {
         $this->assertEquals(date(Date::FORMAT_DEFAULT), Date::current());
     }
+
+    /**
+     * @param $date
+     * @param string $format
+     * @param $expected
+     *
+     * @dataProvider providerExtremeMouthDate
+     */
+    public function testExtremeMouthDate($date, string $format, $expected): void
+    {
+        $this->assertEquals($expected, Date::extremeMouthDate($date, $format));
+    }
+
+    /**
+     * @return array
+     */
+    public function providerExtremeMouthDate(): array
+    {
+        return [
+            [
+                '01.01.2018',
+                Date::FORMAT_SQL,
+                '2017-12-31',
+            ],
+            [
+                strtotime('28.02.2018'),
+                Date::FORMAT_SQL,
+                '2018-01-31',
+            ],
+            [
+                '31.12.2018',
+                'Y-m-01',
+                '2018-11-01',
+            ],
+        ];
+    }
 }
