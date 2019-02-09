@@ -137,4 +137,17 @@ class Date
     {
         return (int) ceil((int) $numberMonth / 3);
     }
+
+    /**
+     * Change days
+     *
+     * @param $date
+     * @param $day
+     * @param string $format
+     * @return string
+     */
+    public static function changeDay($date, $day, string $format = self::FORMAT_DEFAULT): string
+    {
+        return date($format, strtotime($date . ' ' . ($day >= 0 ? '+' . $day : $day) . ' day'));
+    }
 }
