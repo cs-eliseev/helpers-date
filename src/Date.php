@@ -150,4 +150,15 @@ class Date
     {
         return date($format, strtotime($date . ' ' . ($day >= 0 ? '+' . $day : $day) . ' day'));
     }
+
+    /**
+     * Is today date
+     *
+     * @param $date
+     * @return bool
+     */
+    public static function isToday($date): bool
+    {
+        return self::toSQL($date) == date(self::FORMAT_SQL);
+    }
 }
