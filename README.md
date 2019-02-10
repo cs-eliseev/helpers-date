@@ -256,12 +256,31 @@ Date::changeDay('2018-01-01', -1);
 // 31.12.2017
 ```
 
-Add day:
+Change format:
 ```php
 Date::changeDay('01.01.2018', -1, Date::FORMAT_SQL);
 // 2017-12-31
 ```
 
+**Change day**
+
+Example:
+```php
+Date::isToday('01.01.2018 00:00:00');
+// false
+```
+
+Use timestamp:
+```php
+Date::isToday(1519804800);
+// false
+```
+
+Use relative time:
+```php
+Date::isToday('now');
+// true
+```
 
 ## License
 
