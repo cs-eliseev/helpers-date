@@ -262,7 +262,7 @@ Date::changeDay('01.01.2018', -1, Date::FORMAT_SQL);
 // 2017-12-31
 ```
 
-**Change day**
+**Check today**
 
 Example:
 ```php
@@ -281,6 +281,15 @@ Use relative time:
 Date::isToday('now');
 // true
 ```
+
+**Check today**
+
+Example:
+```php
+Date::checkDateByTimestamp((new \DateTime('now'))->format('U'));
+// true
+```
+
 
 ## License
 
