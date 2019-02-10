@@ -96,8 +96,13 @@ echo PHP_EOL;
 var_dump(Date::isToday('01.01.2018 00:00:00'));
 // Example: use timestamp
 // false
-var_dump(Date::isToday('01.01.2018 00:00:00'));
+var_dump(Date::isToday(1519804800));
 // Example: use relative time
 // true
 var_dump(Date::isToday('now'));
+echo PHP_EOL;
+
+// Example: check date by timestamp
+// true
+var_dump(Date::checkDateByTimestamp((new \DateTime('now'))->format('U')));
 echo PHP_EOL;
