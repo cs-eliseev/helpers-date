@@ -161,4 +161,16 @@ class Date
     {
         return self::toSQL($date) == date(self::FORMAT_SQL);
     }
+
+    /**
+     * Check date by timestemp
+     *
+     * @param int $timestemp
+     * @return bool
+     */
+    public static function checkDateByTimestamp(int $timestemp): bool
+    {
+        $arDate = explode('/', date('Y/m/d', $timestemp));
+        return checkdate((int) $arDate[1], (int) $arDate[2], (int) $arDate[0]);
+    }
 }
