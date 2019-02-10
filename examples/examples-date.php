@@ -90,3 +90,14 @@ var_dump(Date::changeDay('2018-01-01', -1));
 // 01.01.2018 => 2017-12-31
 var_dump(Date::changeDay('01.01.2018', -1, Date::FORMAT_SQL));
 echo PHP_EOL;
+
+// Example: is Today
+// false
+var_dump(Date::isToday('01.01.2018 00:00:00'));
+// Example: use timestamp
+// false
+var_dump(Date::isToday('01.01.2018 00:00:00'));
+// Example: use relative time
+// true
+var_dump(Date::isToday('now'));
+echo PHP_EOL;
