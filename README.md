@@ -5,6 +5,14 @@ The helpers allows you to easy use DATE. Change format, add/sub day, diff date, 
 
 Project repository: https://github.com/cs-eliseev/helpers-date
 
+```php
+if (Date::isToday($date)) {
+    $date = Date::changeDay($date, -7);
+}
+$mount = Date::diff($date, 'now', '%m');
+Date::getQuarterByNumberMonth($mount);
+```
+
 ***
 
 ## Introduction
