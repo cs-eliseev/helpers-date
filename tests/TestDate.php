@@ -344,4 +344,33 @@ class TestDate extends TestCase
             ],
         ];
     }
+
+    /**
+     * @param $date
+     * @param $expected
+     *
+     * @dataProvider providerCheckDateByTimestamp
+     */
+    public function testCheckDateByTimestamp($date, $expected): void
+    {
+        $this->assertEquals($expected, Date::checkDateByTimestamp($date));
+    }
+
+    /**
+     * @return array
+     */
+    public function providerCheckDateByTimestamp(): array
+    {
+        return [
+            [
+                (new \DateTime('now'))->format('U'),
+                true,
+            ],
+
+            [
+                1,
+                true,
+            ],
+        ];
+    }
 }
