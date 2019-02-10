@@ -1,7 +1,7 @@
 DATE CSE HELPERS
 =======
 
-The helpers allows you to DATE processing. Change format, add/sub day, diff date, get quarter - all this is available in this library.
+The helpers allows you to easy use DATE. Change format, add/sub day, diff date, get quarter - all this is available in this library.
 
 Project repository: https://github.com/cs-eliseev/helpers-date
 

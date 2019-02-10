@@ -1,6 +1,6 @@
 {
     "name": "cse/helpers-date",
-    "description": "The helpers allows you to DATE processing. Change format, add/sub day, diff date, get quarter - all this is available in this library.",
+    "description": "The helpers allows you to easy use DATE. Change format, add/sub day, diff date, get quarter - all this is available in this library.",
     "keywords": ["date", "cse", "cs-eliseev", "framework", "basic", "library", "project"],
     "homepage": "https://github.com/cs-eliseev/helpers-date",
     "type": "library",
