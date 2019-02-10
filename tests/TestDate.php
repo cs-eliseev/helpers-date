@@ -312,4 +312,36 @@ class TestDate extends TestCase
             ],
         ];
     }
+
+    /**
+     * @param $date
+     * @param $expected
+     *
+     * @dataProvider providerIsToday
+     */
+    public function testIsToday($date, $expected): void
+    {
+        $this->assertEquals($expected, Date::isToday($date));
+    }
+
+    /**
+     * @return array
+     */
+    public function providerIsToday(): array
+    {
+        return [
+            [
+                '01.01.2018 00:00:00',
+                false
+            ],
+            [
+                1519804800,
+                false
+            ],
+            [
+                'now',
+                true
+            ],
+        ];
+    }
 }
