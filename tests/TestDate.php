@@ -42,7 +42,7 @@ class TestDate extends TestCase
      * @param string $format
      * @param $expected
      *
-     * @dataProvider providerConvertDateToFormat
+     * @dataProvider providerToFormat
      */
     public function testToFormat($date, string $format, $expected): void
     {
@@ -117,7 +117,7 @@ class TestDate extends TestCase
             ],
             [
                 strtotime($now->format(Date::FORMAT_DEFAULT . ' H:i:s')),
-                $now->format(Date::FORMAT_SQL . ' H:i:s'),
+                $now->format(Date::FORMAT_SQL),
             ],
         ];
     }
@@ -144,7 +144,7 @@ class TestDate extends TestCase
             [
                 '2018-07-01',
                 '2018-07-01',
-                'd',
+                '%d',
                 0,
             ],
             [
