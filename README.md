@@ -41,7 +41,7 @@ You can find the most recent version of this project [here](https://github.com/c
 
 Execute the following command to get the latest version of the package:
 ```shell
-composer require cse/helpers-json
+composer require cse/helpers-date
 ```
 
 Or file composer.json should include the following contents:
