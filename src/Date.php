@@ -18,6 +18,7 @@ class Date
      * Get time by date
      *
      * @param $date
+     *
      * @return int|null
      */
     public static function getTime($date = 'now'): ?int
@@ -38,6 +39,7 @@ class Date
      *
      * @param $date
      * @param string $format
+     *
      * @return null|string
      */
     public static function toFormat($date = 'now', string $format = self::FORMAT_DEFAULT): ?string
@@ -51,6 +53,7 @@ class Date
      * Convert date to SQL
      *
      * @param $date
+     *
      * @return null|string
      */
     public static function toSQL($date = 'now'): ?string
@@ -66,6 +69,7 @@ class Date
      * @param $firstDate
      * @param $secondDate
      * @param string $type
+     *
      * @return null|string
      */
     public static function diff($firstDate, $secondDate = 'now', string $type = '%d'): ?string
@@ -91,6 +95,7 @@ class Date
      * Get current date
      *
      * @param string $format
+     *
      * @return string
      */
     public static function current(string $format = self::FORMAT_DEFAULT): string
@@ -100,11 +105,14 @@ class Date
 
     /**
      * Get date last month by date
-     * format = 'Y-m-01' - fist day
-     * format = 'Y-m-d' - last day
+     *
+     * @example
+     * format fist day: 'Y-m-01'
+     * format last day: 'Y-m-d'
      *
      * @param $date
      * @param string $format
+     *
      * @return null|string
      */
     public static function extremeMonthDate($date = 'now', string $format = self::FORMAT_SQL): ?string
@@ -118,6 +126,7 @@ class Date
      * Get quarter by date
      *
      * @param $date
+     *
      * @return null|int
      */
     public static function getQuarter($date = 'now'): ?int
@@ -131,6 +140,7 @@ class Date
      * Get quarter by month
      *
      * @param $numberMonth
+     *
      * @return int
      */
     public static function getQuarterByNumberMonth($numberMonth): int
@@ -144,6 +154,7 @@ class Date
      * @param $date
      * @param $day
      * @param string $format
+     *
      * @return string
      */
     public static function changeDay($date, $day, string $format = self::FORMAT_DEFAULT): string
@@ -155,6 +166,7 @@ class Date
      * Is today date
      *
      * @param $date
+     *
      * @return bool
      */
     public static function isToday($date): bool
@@ -166,6 +178,7 @@ class Date
      * Check date by timestemp
      *
      * @param int $timestemp
+     *
      * @return bool
      */
     public static function checkDateByTimestamp(int $timestemp): bool
