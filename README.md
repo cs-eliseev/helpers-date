@@ -1,6 +1,11 @@
 DATE CSE HELPERS
 =======
 
+[![Packagist](https://img.shields.io/packagist/v/cse/helpers-date.svg?style=flat-square)](https://packagist.org/packages/cse/helpers-date)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg?style=flat-square)](https://packagist.org/packages/cse/helpers-date)
+[![Packagist](https://img.shields.io/packagist/l/cse/helpers-date.svg?style=flat-square)](https://github.com/cs-eliseev/helpers-date/blob/master/LICENSE.md)
+[![GitHub repo size](https://img.shields.io/github/repo-size/cs-eliseev/helpers-date.svg?style=flat-square)](https://github.com/cs-eliseev/helpers-date/archive/master.zip)
+
 The helpers allows you to easy use DATE. Change format, add/sub day, diff date, get quarter - all this is available in this library.
 
 Project repository: https://github.com/cs-eliseev/helpers-date
