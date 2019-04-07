@@ -1,4 +1,4 @@
-[English](https://github.com/cs-eliseev/helpers-date/blob/master/README.md) | Русский
+English | [Русский](https://github.com/cs-eliseev/helpers-date/blob/master/README.ru_RU.md)
 
 DATE CSE HELPERS
 =======
@@ -361,6 +361,13 @@ Used PHPUnit default config:
 ```bash
 phpunit --configuration PATH/TO/PROJECT/phpunit.xml
 ```
+
+
+## Donating
+
+You can support this project [here](https://www.paypal.me/cseliseev/10usd). 
+You can also help out by contributing to the project, or reporting bugs. 
+Even voicing your suggestions for features is great. Anything to help is much appreciated.
 
 
 ## License
