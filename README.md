@@ -14,6 +14,7 @@ The helpers allows you to easy use DATE. Change format, add/sub day, diff date, 
 
 Project repository: https://github.com/cs-eliseev/helpers-date
 
+**DATE**
 ```php
 if (Date::isToday($date)) {
     $date = Date::changeDay($date, -7);
@@ -28,7 +29,7 @@ Date::getQuarterByNumberMonth($mount);
 
 CSE HELPERS is a collection of several libraries with simple functions written in PHP for people.
 
-Despite using PHP as the main programming language for the Internet, its functions are not enough. Date CSE HELPERS used method: change format, add/sub day, diff date, get quarter and other.
+Despite using PHP as the main programming language for the Internet, its functions are not enough. DATE CSE HELPERS used method: change format, add/sub day, diff date, get quarter and other.
 
 CSE HELPERS was created for the rapid development of web applications.
 
@@ -90,15 +91,17 @@ Date::getTime('01.01.2018');
 // 1514754000
 ```
 
-Use curent date:
+Use current date:
 ```php
 Date::getTime();
-// Date::getTime('now')
+Date::getTime('now');
+// timestemp
 ```
 
 Use relative time:
 ```php
 Date::getTime('+1 week 2 days 4 hours 2 seconds');
+// timestemp
 ```
 
 **Convert date to format**
@@ -121,10 +124,11 @@ Date::toFormat(1514754000, 'Y/m/d');
 // 2018/01/01
 ```
 
-Use curent date:
+Use current date:
 ```php
 Date::toFormat();
-// Date::toFormat('now')
+Date::toFormat('now');
+// d.m.Y
 ```
 
 Use relative time:
@@ -143,18 +147,20 @@ Date::toSQL('01.01.2018');
 Use timestamp:
 ```php
 Date::toSQL(1514754000);
-// 01.01.2018
+// 2018-01-01
 ```
 
-Use curent date:
+Use current date:
 ```php
 Date::toSQL();
-// Date::toSQL('now')
+Date::toSQL('now');
+// Y-m-d
 ```
 
 Use relative time:
 ```php
 Date::toSQL('+1 week 2 days 4 hours 2 seconds');
+// Y-m-d
 ```
 
 **Diff date**
@@ -183,15 +189,17 @@ Date::diff('31.01.2018', 1514754000, '%d/%m'));
 // 30/0
 ```
 
-Curent date:
+Current date:
 ```php
 Date::diff('31.01.2018');
-// Date::diff('31.01.2018', 'now')
+Date::diff('31.01.2018', 'now');
+// %d
 ```
 
 Use relative time:
 ```php
 Date::diff'31.01.2018', '+1 week');
+// %d
 ```
 
 **Current date**
@@ -199,14 +207,16 @@ Date::diff'31.01.2018', '+1 week');
 Example:
 ```php
 Date::current();
+// d.m.Y
 ```
 
 Set format:
 ```php
 Date::current(Date::FORMAT_SQL);
+// Y-m-d
 ```
 
-**Extrme month date**
+**Extreme month date**
 
 Get last day month:
 ```php
@@ -214,7 +224,13 @@ Date::extremeMonthDate('11.01.2018');
 // 2018-01-31
 ```
 
-Use timestemp get first day month:
+Get first day month:
+```php
+Date::extremeMonthDate('28.02.2018', 'Y-m-01');
+// 2018-02-01
+```
+
+Use timestemp:
 ```php
 Date::extremeMonthDate(strtotime('28.02.2018'), 'Y-m-01');
 // 2018-02-01
@@ -223,12 +239,14 @@ Date::extremeMonthDate(strtotime('28.02.2018'), 'Y-m-01');
 Use current date:
 ```php
 Date::extremeMonthDate();
-// Date::extremeMonthDate('now') => Y-m-last day
+Date::extremeMonthDate('now');
+// Y-m-last_mounth_day
 ```
 
 Use relative date:
 ```php
 Date::extremeMonthDate('+1 week');
+// Y-m-last_mounth_day + 1 week
 ```
 
 **Get quarter**
@@ -245,15 +263,17 @@ Date::getQuarter(1514754000);
 // 1
 ```
 
-Use curent date:
+Use current date:
 ```php
 Date::getQuarter();
-// Date::getQuarter('now')
+Date::getQuarter('now');
+// quarter
 ```
 
 Use relative time:
 ```php
 Date::getQuarter('+1 week 2 days 4 hours 2 seconds');
+// quarter
 ```
 
 **Get quarter by number month**
@@ -284,6 +304,12 @@ Date::changeDay('01.01.2018', -1, Date::FORMAT_SQL);
 // 2017-12-31
 ```
 
+Use timestamp:
+```php
+Date::changeDay(timestamp('01.01.2018'), -1, Date::FORMAT_SQL);
+// 2017-12-31
+```
+
 **Check today**
 
 Example:
@@ -304,7 +330,7 @@ Date::isToday('now');
 // true
 ```
 
-**Check today**
+**Check date**
 
 Example:
 ```php
@@ -337,7 +363,7 @@ phpunit --configuration PATH/TO/PROJECT/phpunit.xml
 
 ## License
 
-The CSE HELPERS DATE is open-source PHP library licensed under the MIT license. Please see [License File](https://github.com/cs-eliseev/helpers-date/blob/master/LICENSE.md) for more information.
+The DATE CSE HELPERS is open-source PHP library licensed under the MIT license. Please see [License File](https://github.com/cs-eliseev/helpers-date/blob/master/LICENSE.md) for more information.
 
 ***
 
