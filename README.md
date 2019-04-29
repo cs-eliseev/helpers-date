@@ -29,11 +29,11 @@ Date::getQuarterByNumberMonth($mount);
 
 ## Introduction
 
-CSE HELPERS is a collection of several libraries with simple functions written in PHP for people.
+[CSE HELPERS](https://github.com/cs-eliseev/helpers/blob/master/README.md) is a collection of several libraries with simple functions written in PHP for people.
 
 Despite using PHP as the main programming language for the Internet, its functions are not enough. DATE CSE HELPERS used method: change format, add/sub day, diff date, get quarter and other.
 
-CSE HELPERS was created for the rapid development of web applications.
+[CSE HELPERS](https://github.com/cs-eliseev/helpers/blob/master/README.md) was created for the rapid development of web applications.
 
 **CSE Helpers project:**
 * [Array CSE helpers](https://github.com/cs-eliseev/helpers-arrays)
