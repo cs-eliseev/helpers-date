@@ -6,6 +6,14 @@ use PHPUnit\Framework\TestCase;
 class TestDate extends TestCase
 {
     /**
+     * set default timezone UTC
+     */
+    protected function setUp()
+    {
+        date_default_timezone_set('UTC');
+    }
+
+    /**
      * @param $date
      * @param $expected
      *
@@ -51,9 +59,12 @@ class TestDate extends TestCase
 
     /**
      * @return array
+     *
+     * @throws Exception
      */
     public function providerToFormat(): array
     {
+        date_default_timezone_set('UTC');
         $now = (new \DateTime('now'));
 
         return [
@@ -93,6 +104,8 @@ class TestDate extends TestCase
 
     /**
      * @return array
+     *
+     * @throws Exception
      */
     public function providerToSql(): array
     {
@@ -358,6 +371,8 @@ class TestDate extends TestCase
 
     /**
      * @return array
+     *
+     * @throws Exception
      */
     public function providerCheckDateByTimestamp(): array
     {
