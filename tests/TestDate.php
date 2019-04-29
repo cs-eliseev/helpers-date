@@ -6,6 +6,14 @@ use PHPUnit\Framework\TestCase;
 class TestDate extends TestCase
 {
     /**
+     * set default timezone UTC
+     */
+    protected function setUp(): void
+    {
+        date_default_timezone_set('UTC');
+    }
+
+    /**
      * @param $date
      * @param $expected
      *
@@ -21,8 +29,6 @@ class TestDate extends TestCase
      */
     public function providerGetTime(): array
     {
-        date_default_timezone_set('UTC');
-
         return [
             [
                 '01.01.2018',
@@ -103,7 +109,6 @@ class TestDate extends TestCase
      */
     public function providerToSql(): array
     {
-        date_default_timezone_set('UTC');
         $now = (new \DateTime('now'));
 
         return [
@@ -148,8 +153,6 @@ class TestDate extends TestCase
      */
     public function providerDiffDates(): array
     {
-        date_default_timezone_set('UTC');
-
         return [
             [
                 '2018-07-01',
@@ -192,8 +195,6 @@ class TestDate extends TestCase
      */
     public function testExtremeMonthDate($date, string $format, $expected): void
     {
-        date_default_timezone_set('UTC');
-
         $this->assertEquals($expected, Date::extremeMonthDate($date, $format));
     }
 
@@ -202,8 +203,6 @@ class TestDate extends TestCase
      */
     public function providerExtremeMonthDate(): array
     {
-        date_default_timezone_set('UTC');
-
         return [
             [
                 '01.01.2018',
@@ -239,8 +238,6 @@ class TestDate extends TestCase
      */
     public function providerGetQuarter(): array
     {
-        date_default_timezone_set('UTC');
-
         return [
             [
                 '01.01.2018 00:00:00',
@@ -273,8 +270,6 @@ class TestDate extends TestCase
      */
     public function providerGetQuarterByMonth(): array
     {
-        date_default_timezone_set('UTC');
-
         return [
             [
                 1,
@@ -309,8 +304,6 @@ class TestDate extends TestCase
      */
     public function providerChangeDays(): array
     {
-        date_default_timezone_set('UTC');
-
         return [
             [
                 '01.01.2018 00:00:00',
@@ -349,8 +342,6 @@ class TestDate extends TestCase
      */
     public function providerIsToday(): array
     {
-        date_default_timezone_set('UTC');
-
         return [
             [
                 '01.01.2018 00:00:00',
@@ -385,8 +376,6 @@ class TestDate extends TestCase
      */
     public function providerCheckDateByTimestamp(): array
     {
-        date_default_timezone_set('UTC');
-
         return [
             [
                 (new \DateTime('now'))->format('U'),
