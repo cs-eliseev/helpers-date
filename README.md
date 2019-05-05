@@ -354,6 +354,7 @@ Set timezone:
 ```php
 Date::setTimezone('GMT');
 // GMT
+```
 
 
 ## Testing & Code Coverage
