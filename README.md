@@ -31,7 +31,8 @@ Date::getQuarterByNumberMonth($mount);
 
 [CSE HELPERS](https://github.com/cs-eliseev/helpers/blob/master/README.md) is a collection of several libraries with simple functions written in PHP for people.
 
-Despite using PHP as the main programming language for the Internet, its functions are not enough. DATE CSE HELPERS used method: change format, add/sub day, diff date, get quarter and other.
+Despite using PHP as the main programming language for the Internet, its functions are not enough. 
+DATE CSE HELPERS used method: change format, add/sub day, diff date, get quarter and other.
 
 [CSE HELPERS](https://github.com/cs-eliseev/helpers/blob/master/README.md) was created for the rapid development of web applications.
 
@@ -83,7 +84,8 @@ git clone https://github.com/cs-eliseev/helpers-date.git
 
 ## Usage
 
-The class consists of static methods that are conveniently used in any project. See example [examples-date.php](https://github.com/cs-eliseev/helpers-date/blob/master/examples/examples-date.php).
+The class consists of static methods that are conveniently used in any project. 
+See example [examples-date.php](https://github.com/cs-eliseev/helpers-date/blob/master/examples/examples-date.php).
 
 **GET time by date**
 
@@ -339,6 +341,19 @@ Example:
 Date::checkDateByTimestamp((new \DateTime('now'))->format('U'));
 // true
 ```
+
+**SET TIMEZONE**
+
+Example:
+```php
+Date::setTimezone();
+// UTC
+```
+
+Set timezone:
+```php
+Date::setTimezone('GMT');
+// GMT
 
 
 ## Testing & Code Coverage

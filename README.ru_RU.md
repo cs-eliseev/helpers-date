@@ -32,7 +32,8 @@ Date::getQuarterByNumberMonth($mount);
 
 [CSE HELPERS](https://github.com/cs-eliseev/helpers/blob/master/README.ru_RU.md) - это набор из небольших библиотек с простыми функциями написанных на PHP специально для вас.
 
-Несмотря на повсеместное использование PHP в качестве основного языка для WEB разработки, его зачастую недостаточно. DATE CSE HELPERS, позволит вам довольно просто получить дату, добавить день, изменить формат и д.р.
+Несмотря на повсеместное использование PHP в качестве основного языка для WEB разработки, его зачастую недостаточно. 
+DATE CSE HELPERS, позволит вам довольно просто получить дату, добавить день, изменить формат и д.р.
 
 [CSE HELPERS](https://github.com/cs-eliseev/helpers/blob/master/README.ru_RU.md) создан для быстрой разработки веб-приложений.
 
@@ -85,7 +86,8 @@ git clone https://github.com/cs-eliseev/helpers-date.git
 
 ## Использование
 
-Данный класс использует статические методы, которые удобно использовать в любом проекте. Смотрите пример [examples-date.php](https://github.com/cs-eliseev/helpers-date/blob/master/examples/examples-date.php).
+Данный класс использует статические методы, которые удобно использовать в любом проекте. 
+Смотрите пример [examples-date.php](https://github.com/cs-eliseev/helpers-date/blob/master/examples/examples-date.php).
 
 
 **Получить время по дате**
@@ -342,6 +344,20 @@ Date::isToday('now');
 ```php
 Date::checkDateByTimestamp((new \DateTime('now'))->format('U'));
 // true
+```
+
+**Установить временную зону**
+
+Пример:
+```php
+Date::setTimezone();
+// UTC
+```
+
+Установить зону:
+```php
+Date::setTimezone('GMT');
+// GMT
 ```
 
 
