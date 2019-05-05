@@ -117,3 +117,8 @@ $label = 'Check date by timestamp: ';
 // true
 var_dump($label . Date::checkDateByTimestamp((new \DateTime('now'))->format('U')));
 echo PHP_EOL;
+
+// Example: set timezone
+$label = 'Set timezone';
+var_dump($label . Date::setTimezone(Date::DEFAULT_TIMEZONE));
+echo PHP_EOL;
