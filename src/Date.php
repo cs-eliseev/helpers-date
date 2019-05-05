@@ -14,6 +14,8 @@ class Date
     const FORMAT_SQL = 'Y-m-d';
     const FORMAT_DEFAULT = 'd.m.Y';
 
+    const DEFAULT_TIMEZONE = 'UTC';
+
     /**
      * Get time by date
      *
@@ -146,6 +148,16 @@ class Date
     public static function getQuarterByNumberMonth($numberMonth): int
     {
         return (int) ceil((int) $numberMonth / 3);
+    }
+
+    /**
+     * Set timezone
+     *
+     * @param string $timezone
+     */
+    public static function setTimezone(string $timezone = self::DEFAULT_TIMEZONE): void
+    {
+        date_default_timezone_set($timezone);
     }
 
     /**
