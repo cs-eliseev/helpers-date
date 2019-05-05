@@ -10,7 +10,7 @@ class TestDate extends TestCase
      */
     protected function setUp(): void
     {
-        date_default_timezone_set('UTC');
+        date_default_timezone_set(Date::DEFAULT_TIMEZONE);
     }
 
     /**
@@ -381,11 +381,34 @@ class TestDate extends TestCase
                 (new \DateTime('now'))->format('U'),
                 true,
             ],
-
             [
                 1,
                 true,
             ],
+        ];
+    }
+
+    /**
+     * @param string $timezone
+     *
+     * @dataProvider providerSetTimezone
+     */
+    public function testSetTimezone(string $timezone): void
+    {
+        Date::setTimezone($timezone);
+        $this->assertEquals($timezone, date_default_timezone_get());
+    }
+
+    /**
+     * @return array
+     *
+     * @throws Exception
+     */
+    public function providerSetTimezone(): array
+    {
+        return [
+            [Date::DEFAULT_TIMEZONE],
+            ['GMT'],
         ];
     }
 }
