@@ -161,6 +161,16 @@ class Date
     }
 
     /**
+     * Get timezone
+     *
+     * @return string
+     */
+    public static function getTimezone(): string
+    {
+        return date_default_timezone_get();
+    }
+
+    /**
      * Change days
      *
      * @param $date
