@@ -127,3 +127,8 @@ echo PHP_EOL;
 $label = 'Get timezone: ';
 var_dump($label . Date::getTimezone());
 echo PHP_EOL;
+
+// Example: is timezone
+$label = 'Is timezone: ';
+var_dump($label . Date::isTimezone(Date::DEFAULT_TIMEZONE));
+echo PHP_EOL;
