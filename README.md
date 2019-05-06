@@ -356,6 +356,19 @@ Date::setTimezone('GMT');
 // GMT
 ```
 
+**GET TIMEZONE**
+
+Example:
+```php
+Date::getTimezone();
+// UTC
+```
+
+Set timezone:
+```php
+Date::isTimezone('GMT');
+// false
+```
 
 ## Testing & Code Coverage
 
