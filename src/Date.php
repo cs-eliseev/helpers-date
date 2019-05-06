@@ -171,6 +171,18 @@ class Date
     }
 
     /**
+     * Is timezone
+     *
+     * @param string $timezone
+     *
+     * @return bool
+     */
+    public static function isTimezone(string $timezone = self::DEFAULT_TIMEZONE): bool
+    {
+        return self::getTimezone() == $timezone;
+    }
+
+    /**
      * Change days
      *
      * @param $date
