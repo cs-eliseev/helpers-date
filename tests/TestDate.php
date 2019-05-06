@@ -435,4 +435,32 @@ class TestDate extends TestCase
             ['GMT'],
         ];
     }
+
+    /**
+     * @param string $timezone
+     * @param bool $set
+     *
+     * @dataProvider providerIsTimezone
+     */
+    public function testIsTimezone(string $timezone, bool $set): void
+    {
+        $this->assertEquals($set, Date::isTimezone($timezone));
+    }
+
+    /**
+     * @return array
+     */
+    public function providerIsTimezone(): array
+    {
+        return [
+            [
+                Date::DEFAULT_TIMEZONE,
+                true
+            ],
+            [
+                'GMT',
+                false
+            ],
+        ];
+    }
 }
