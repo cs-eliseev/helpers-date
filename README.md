@@ -364,6 +364,14 @@ Date::getTimezone();
 // UTC
 ```
 
+**IS TIMEZONE**
+
+Example:
+```php
+Date::isTimezone();
+// true
+```
+
 Set timezone:
 ```php
 Date::isTimezone('GMT');
