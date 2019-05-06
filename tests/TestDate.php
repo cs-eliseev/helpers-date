@@ -411,4 +411,28 @@ class TestDate extends TestCase
             ['GMT'],
         ];
     }
+
+    /**
+     * @param string $timezone
+     *
+     * @dataProvider providerGetTimezone
+     */
+    public function testGetTimezone(string $timezone): void
+    {
+        Date::setTimezone($timezone);
+        $this->assertEquals($timezone, Date::getTimezone($timezone));
+    }
+
+    /**
+     * @return array
+     *
+     * @throws Exception
+     */
+    public function providerGetTimezone(): array
+    {
+        return [
+            [Date::DEFAULT_TIMEZONE],
+            ['GMT'],
+        ];
+    }
 }
